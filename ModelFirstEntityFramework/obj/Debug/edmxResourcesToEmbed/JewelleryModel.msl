@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JewelleryModelStoreContainer" CdmEntityContainer="JewelleryModelContainer">
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.Items)">
+        <MappingFragment StoreEntitySet="Items">
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="AXItemId" ColumnName="AXItemId" />
+          <ScalarProperty Name="ItemSizeId" ColumnName="ItemSizeId" />
+          <ScalarProperty Name="ItemTypeId" ColumnName="ItemTypeId" />
+          <ScalarProperty Name="ItemBarcode" ColumnName="ItemBarcode" />
+          <ScalarProperty Name="ItemModifiedBy" ColumnName="ItemModifiedBy" />
+          <ScalarProperty Name="ItemModifiedDateTime" ColumnName="ItemModifiedDateTime" />
+          <ScalarProperty Name="StoreItemsStoreItemId" ColumnName="StoreItemsStoreItemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.Products)">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="LegalUnitId" ColumnName="LegalUnitId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductNo" ColumnName="ProductNo" />
+          <ScalarProperty Name="ProductTypeId" ColumnName="ProductTypeId" />
+          <ScalarProperty Name="ProductModifiedBy" ColumnName="ProductModifiedBy" />
+          <ScalarProperty Name="ProductModifiedDateTime" ColumnName="ProductModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LegalUnits">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.LegalUnits)">
+        <MappingFragment StoreEntitySet="LegalUnits">
+          <ScalarProperty Name="LegalUnitId" ColumnName="LegalUnitId" />
+          <ScalarProperty Name="LegalUnitCode" ColumnName="LegalUnitCode" />
+          <ScalarProperty Name="LegalUnitName" ColumnName="LegalUnitName" />
+          <ScalarProperty Name="LegalUnitModifiedBy" ColumnName="LegalUnitModifiedBy" />
+          <ScalarProperty Name="LegalUnitModifiedDateTime" ColumnName="LegalUnitModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemLocalisations">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.ItemLocalisation)">
+        <MappingFragment StoreEntitySet="ItemLocalisations">
+          <ScalarProperty Name="ItemLocalisationId" ColumnName="ItemLocalisationId" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="NameTranslated" ColumnName="NameTranslated" />
+          <ScalarProperty Name="LanguageCultureCode" ColumnName="LanguageCultureCode" />
+          <ScalarProperty Name="LanguageName" ColumnName="LanguageName" />
+          <ScalarProperty Name="ISO639_2" ColumnName="ISO639_2" />
+          <ScalarProperty Name="ISO639_3" ColumnName="ISO639_3" />
+          <ScalarProperty Name="ItemLocalisationModifiedBy" ColumnName="ItemLocalisationModifiedBy" />
+          <ScalarProperty Name="ItemLocalisationModifiedDateTime" ColumnName="ItemLocalisationModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemPrices">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.ItemPrices)">
+        <MappingFragment StoreEntitySet="ItemPrices">
+          <ScalarProperty Name="PriceId" ColumnName="PriceId" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+          <ScalarProperty Name="PriceCodeId" ColumnName="PriceCodeId" />
+          <ScalarProperty Name="ItemPrice" ColumnName="ItemPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PriceCodes">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.PriceCodes)">
+        <MappingFragment StoreEntitySet="PriceCodes">
+          <ScalarProperty Name="PriceCodeId" ColumnName="PriceCodeId" />
+          <ScalarProperty Name="PriceCodeModifiedBy" ColumnName="PriceCodeModifiedBy" />
+          <ScalarProperty Name="PriceCodeModifiedDateTime" ColumnName="PriceCodeModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Currencies">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.Currencies)">
+        <MappingFragment StoreEntitySet="Currencies">
+          <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+          <ScalarProperty Name="CurrencyModifiedBy" ColumnName="CurrencyModifiedBy" />
+          <ScalarProperty Name="CurrencyModifiedDateTime" ColumnName="CurrencyModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Merchants">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.Merchants)">
+        <MappingFragment StoreEntitySet="Merchants">
+          <ScalarProperty Name="MerchantId" ColumnName="MerchantId" />
+          <ScalarProperty Name="MerchantName" ColumnName="MerchantName" />
+          <ScalarProperty Name="MerchantPhone" ColumnName="MerchantPhone" />
+          <ScalarProperty Name="MerchantEmail" ColumnName="MerchantEmail" />
+          <ScalarProperty Name="MerchantAddress" ColumnName="MerchantAddress" />
+          <ScalarProperty Name="MerchantCity" ColumnName="MerchantCity" />
+          <ScalarProperty Name="MerchantPostCode" ColumnName="MerchantPostCode" />
+          <ScalarProperty Name="MerchantCountry" ColumnName="MerchantCountry" />
+          <ScalarProperty Name="MerchantModifiedBy" ColumnName="MerchantModifiedBy" />
+          <ScalarProperty Name="MerchantModifiedDateTime" ColumnName="MerchantModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stores">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.Stores)">
+        <MappingFragment StoreEntitySet="Stores">
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="MerchantId" ColumnName="MerchantId" />
+          <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+          <ScalarProperty Name="StorePhone" ColumnName="StorePhone" />
+          <ScalarProperty Name="StoreEmail" ColumnName="StoreEmail" />
+          <ScalarProperty Name="StoreAddress" ColumnName="StoreAddress" />
+          <ScalarProperty Name="StoreCity" ColumnName="StoreCity" />
+          <ScalarProperty Name="StorePostCode" ColumnName="StorePostCode" />
+          <ScalarProperty Name="PriceCodesPriceCodeId" ColumnName="PriceCodesPriceCodeId" />
+          <ScalarProperty Name="LegalUnitId" ColumnName="LegalUnitId" />
+          <ScalarProperty Name="StoreModifiedBy" ColumnName="StoreModifiedBy" />
+          <ScalarProperty Name="StoreModifiedDateTime" ColumnName="StoreModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StoreItems">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.StoreItems)">
+        <MappingFragment StoreEntitySet="StoreItems">
+          <ScalarProperty Name="StoreItemId" ColumnName="StoreItemId" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="StoreIdModifiedBy" ColumnName="StoreIdModifiedBy" />
+          <ScalarProperty Name="StoreIdModifiedDateTime" ColumnName="StoreIdModifiedDateTime" />
+          <ScalarProperty Name="StoresStoreId" ColumnName="StoresStoreId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemDescriptions">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.ItemDescriptions)">
+        <MappingFragment StoreEntitySet="ItemDescriptions">
+          <ScalarProperty Name="ItemDescriptionId" ColumnName="ItemDescriptionId" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemDescription" ColumnName="ItemDescription" />
+          <ScalarProperty Name="ItemColor" ColumnName="ItemColor" />
+          <ScalarProperty Name="ItemMaterial" ColumnName="ItemMaterial" />
+          <ScalarProperty Name="ItemTheme" ColumnName="ItemTheme" />
+          <ScalarProperty Name="ItemStone" ColumnName="ItemStone" />
+          <ScalarProperty Name="ItemDescrModifiedBy" ColumnName="ItemDescrModifiedBy" />
+          <ScalarProperty Name="ItemDescModifiedDateTime" ColumnName="ItemDescModifiedDateTime" />
+          <ScalarProperty Name="LocalisationId" ColumnName="LocalisationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ItemDescriptionsItems" TypeName="JewelleryModel.ItemDescriptionsItems" StoreEntitySet="ItemDescriptions">
+      <EndProperty Name="Items">
+        <ScalarProperty Name="ItemId" ColumnName="Item_ItemId" />
+      </EndProperty>
+      <EndProperty Name="ItemDescriptions">
+        <ScalarProperty Name="ItemDescriptionId" ColumnName="ItemDescriptionId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="LegalUnitsStores" TypeName="JewelleryModel.LegalUnitsStores" StoreEntitySet="Stores">
+      <EndProperty Name="LegalUnits">
+        <ScalarProperty Name="LegalUnitId" ColumnName="LegalUnit_LegalUnitId" />
+      </EndProperty>
+      <EndProperty Name="Stores">
+        <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

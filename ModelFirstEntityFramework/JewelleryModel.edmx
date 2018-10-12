@@ -1,0 +1,1517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="JewelleryModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="JewelleryModelStoreContainer">
+    <EntitySet Name="Items" EntityType="JewelleryModel.Store.Items" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Products" EntityType="JewelleryModel.Store.Products" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LegalUnits" EntityType="JewelleryModel.Store.LegalUnits" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ItemLocalisations" EntityType="JewelleryModel.Store.ItemLocalisations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ItemPrices" EntityType="JewelleryModel.Store.ItemPrices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PriceCodes" EntityType="JewelleryModel.Store.PriceCodes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Currencies" EntityType="JewelleryModel.Store.Currencies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Merchants" EntityType="JewelleryModel.Store.Merchants" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Stores" EntityType="JewelleryModel.Store.Stores" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StoreItems" EntityType="JewelleryModel.Store.StoreItems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ItemDescriptions" EntityType="JewelleryModel.Store.ItemDescriptions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Orders" EntityType="JewelleryModel.Store.Orders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrderLines" EntityType="JewelleryModel.Store.OrderLines" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrderPaymentLines" EntityType="JewelleryModel.Store.OrderPaymentLines" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Terminals" EntityType="JewelleryModel.Store.Terminals" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Payments" EntityType="JewelleryModel.Store.Payments" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ProductsItems" Association="JewelleryModel.Store.ProductsItems">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Items" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="LegalUnitsProducts" Association="JewelleryModel.Store.LegalUnitsProducts">
+      <End Role="LegalUnits" EntitySet="LegalUnits" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="ItemsItemLocalisation" Association="JewelleryModel.Store.ItemsItemLocalisation">
+      <End Role="Items" EntitySet="Items" />
+      <End Role="ItemLocalisation" EntitySet="ItemLocalisations" />
+    </AssociationSet>
+    <AssociationSet Name="ItemsItemPrices" Association="JewelleryModel.Store.ItemsItemPrices">
+      <End Role="Items" EntitySet="Items" />
+      <End Role="ItemPrices" EntitySet="ItemPrices" />
+    </AssociationSet>
+    <AssociationSet Name="PriceCodesItemPrices" Association="JewelleryModel.Store.PriceCodesItemPrices">
+      <End Role="PriceCodes" EntitySet="PriceCodes" />
+      <End Role="ItemPrices" EntitySet="ItemPrices" />
+    </AssociationSet>
+    <AssociationSet Name="ItemPricesCurrencies" Association="JewelleryModel.Store.ItemPricesCurrencies">
+      <End Role="ItemPrices" EntitySet="ItemPrices" />
+      <End Role="Currencies" EntitySet="Currencies" />
+    </AssociationSet>
+    <AssociationSet Name="MerchantsStores" Association="JewelleryModel.Store.MerchantsStores">
+      <End Role="Merchants" EntitySet="Merchants" />
+      <End Role="Stores" EntitySet="Stores" />
+    </AssociationSet>
+    <AssociationSet Name="PriceCodesStores" Association="JewelleryModel.Store.PriceCodesStores">
+      <End Role="PriceCodes" EntitySet="PriceCodes" />
+      <End Role="Stores" EntitySet="Stores" />
+    </AssociationSet>
+    <AssociationSet Name="ItemDescriptionsItems" Association="JewelleryModel.Store.ItemDescriptionsItems">
+      <End Role="ItemDescriptions" EntitySet="ItemDescriptions" />
+      <End Role="Items" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="LegalUnitsStores" Association="JewelleryModel.Store.LegalUnitsStores">
+      <End Role="LegalUnits" EntitySet="LegalUnits" />
+      <End Role="Stores" EntitySet="Stores" />
+    </AssociationSet>
+    <AssociationSet Name="ItemDescriptionsItemLocalisation" Association="JewelleryModel.Store.ItemDescriptionsItemLocalisation">
+      <End Role="ItemDescriptions" EntitySet="ItemDescriptions" />
+      <End Role="ItemLocalisation" EntitySet="ItemLocalisations" />
+    </AssociationSet>
+    <AssociationSet Name="StoresStoreItems" Association="JewelleryModel.Store.StoresStoreItems">
+      <End Role="Stores" EntitySet="Stores" />
+      <End Role="StoreItems" EntitySet="StoreItems" />
+    </AssociationSet>
+    <AssociationSet Name="StoreItemsItems" Association="JewelleryModel.Store.StoreItemsItems">
+      <End Role="StoreItems" EntitySet="StoreItems" />
+      <End Role="Items" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="CurrencyID" Association="JewelleryModel.Store.CurrencyID">
+      <End Role="Currencies" EntitySet="Currencies" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="StoresTerminals" Association="JewelleryModel.Store.StoresTerminals">
+      <End Role="Stores" EntitySet="Stores" />
+      <End Role="Terminals" EntitySet="Terminals" />
+    </AssociationSet>
+    <AssociationSet Name="TerminalsOrders" Association="JewelleryModel.Store.TerminalsOrders">
+      <End Role="Terminals" EntitySet="Terminals" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="MerchantsOrders" Association="JewelleryModel.Store.MerchantsOrders">
+      <End Role="Merchants" EntitySet="Merchants" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="StoresOrders" Association="JewelleryModel.Store.StoresOrders">
+      <End Role="Stores" EntitySet="Stores" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="OrdersOrderLines" Association="JewelleryModel.Store.OrdersOrderLines">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderLines" EntitySet="OrderLines" />
+    </AssociationSet>
+    <AssociationSet Name="ItemsOrderLines" Association="JewelleryModel.Store.ItemsOrderLines">
+      <End Role="Items" EntitySet="Items" />
+      <End Role="OrderLines" EntitySet="OrderLines" />
+    </AssociationSet>
+    <AssociationSet Name="CurrenciesOrderLines" Association="JewelleryModel.Store.CurrenciesOrderLines">
+      <End Role="Currencies" EntitySet="Currencies" />
+      <End Role="OrderLines" EntitySet="OrderLines" />
+    </AssociationSet>
+    <AssociationSet Name="OrderLinesOrderPaymentLines" Association="JewelleryModel.Store.OrderLinesOrderPaymentLines">
+      <End Role="OrderLines" EntitySet="OrderLines" />
+      <End Role="OrderPaymentLines" EntitySet="OrderPaymentLines" />
+    </AssociationSet>
+    <AssociationSet Name="PaymentsOrderPaymentLines" Association="JewelleryModel.Store.PaymentsOrderPaymentLines">
+      <End Role="Payments" EntitySet="Payments" />
+      <End Role="OrderPaymentLines" EntitySet="OrderPaymentLines" />
+    </AssociationSet>
+    <AssociationSet Name="CurrenciesOrderPaymentLines" Association="JewelleryModel.Store.CurrenciesOrderPaymentLines">
+      <End Role="Currencies" EntitySet="Currencies" />
+      <End Role="OrderPaymentLines" EntitySet="OrderPaymentLines" />
+    </AssociationSet>
+    <AssociationSet Name="OrdersPayments" Association="JewelleryModel.Store.OrdersPayments">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="Payments" EntitySet="Payments" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Items">
+    <Key>
+      <PropertyRef Name="ItemId" />
+    </Key>
+    <Property Name="ItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="AXItemId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ItemSizeId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ItemTypeId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ItemBarcode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ItemModifiedBy" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ItemModifiedDateTime" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StoreItemsStoreItemId" Type="int" Nullable="false" />
+    <Property Name="OrderLine_OrderLineId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LegalUnitId" Type="int" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProductNo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProductTypeId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProductModifiedBy" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProductModifiedDateTime" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LegalUnits">
+    <Key>
+      <PropertyRef Name="LegalUnitId" />
+    </Key>
+    <Property Name="LegalUnitId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LegalUnitCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LegalUnitName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LegalUnitModifiedBy" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LegalUnitModifiedDateTime" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ItemLocalisations">
+    <Key>
+      <PropertyRef Name="ItemLocalisationId" />
+    </Key>
+    <Property Name="ItemLocalisationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemId" Type="int" Nullable="false" />
+    <Property Name="NameTranslated" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LanguageCultureCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LanguageName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ISO639_2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ISO639_3" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ItemLocalisationModifiedBy" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ItemLocalisationModifiedDateTime" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ItemPrices">
+    <Key>
+      <PropertyRef Name="PriceId" />
+    </Key>
+    <Property Name="PriceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemId" Type="int" Nullable="false" />
+    <Property Name="CurrencyId" Type="int" Nullable="false" />
+    <Property Name="PriceCodeId" Type="int" Nullable="false" />
+    <Property Name="ItemPrice" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PriceCodes">
+    <Key>
+      <PropertyRef Name="PriceCodeId" />
+    </Key>
+    <Property Name="PriceCodeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PriceCodeModifiedBy" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PriceCodeModifiedDateTime" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Currencies">
+    <Key>
+      <PropertyRef Name="CurrencyId" />
+    </Key>
+    <Property Name="CurrencyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CurrencyModifiedBy" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CurrencyModifiedDateTime" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Merchants">
+    <Key>
+      <PropertyRef Name="MerchantId" />
+    </Key>
+    <Property Name="MerchantId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MerchantPhone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MerchantEmail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MerchantAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MerchantCity" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MerchantPostCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MerchantCountry" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MerchantModifiedBy" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MerchantModifiedDateTime" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Stores">
+    <Key>
+      <PropertyRef Name="StoreId" />
+    </Key>
+    <Property Name="StoreId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantId" Type="int" Nullable="false" />
+    <Property Name="StoreName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StorePhone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StoreEmail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StoreAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StoreCity" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StorePostCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PriceCodesPriceCodeId" Type="int" Nullable="false" />
+    <Property Name="LegalUnitId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StoreModifiedBy" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StoreModifiedDateTime" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LegalUnit_LegalUnitId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StoreItems">
+    <Key>
+      <PropertyRef Name="StoreItemId" />
+    </Key>
+    <Property Name="StoreItemId" Type="int" Nullable="false" />
+    <Property Name="StoreId" Type="int" Nullable="false" />
+    <Property Name="StoresStoreId" Type="int" Nullable="false" />
+    <Property Name="StoreIdModifiedBy" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StoreIdModifiedDateTime" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ItemDescriptions">
+    <Key>
+      <PropertyRef Name="ItemDescriptionId" />
+    </Key>
+    <Property Name="ItemDescriptionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ItemDescription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ItemColor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ItemMaterial" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ItemTheme" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ItemStone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ItemDescrModifiedBy" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ItemDescModifiedDateTime" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LocalisationId" Type="int" Nullable="false" />
+    <Property Name="Item_ItemId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TransactionTime" Type="datetime" Nullable="false" />
+    <Property Name="CashierName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Nullable="false" />
+    <Property Name="CurrencyId" Type="int" Nullable="false" />
+    <Property Name="Discount" Type="decimal" Nullable="false" />
+    <Property Name="Note" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MerchantId" Type="int" Nullable="false" />
+    <Property Name="StoreId" Type="int" Nullable="false" />
+    <Property Name="Terminal_TerminalId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderLines">
+    <Key>
+      <PropertyRef Name="OrderLineId" />
+    </Key>
+    <Property Name="OrderLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="ItemId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
+    <Property Name="Ammount" Type="decimal" Nullable="false" />
+    <Property Name="Discount" Type="decimal" Nullable="false" />
+    <Property Name="Note" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CurrencyId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderPaymentLines">
+    <Key>
+      <PropertyRef Name="OrderPaymentLineId" />
+    </Key>
+    <Property Name="OrderPaymentLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderLineId" Type="int" Nullable="false" />
+    <Property Name="PaymentId" Type="int" Nullable="false" />
+    <Property Name="PaymentType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CurrencyId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Note" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Currency_CurrencyId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Terminals">
+    <Key>
+      <PropertyRef Name="TerminalId" />
+    </Key>
+    <Property Name="TerminalId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StoreId" Type="int" Nullable="false" />
+    <Property Name="OrderId" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payments">
+    <Key>
+      <PropertyRef Name="PaymentId" />
+    </Key>
+    <Property Name="PaymentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ammount" Type="decimal" Nullable="false" />
+    <Property Name="CurrencyId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Note" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OrderId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="ProductsItems">
+    <End Role="Products" Type="JewelleryModel.Store.Products" Multiplicity="1" />
+    <End Role="Items" Type="JewelleryModel.Store.Items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Items">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LegalUnitsProducts">
+    <End Role="LegalUnits" Type="JewelleryModel.Store.LegalUnits" Multiplicity="1" />
+    <End Role="Products" Type="JewelleryModel.Store.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LegalUnits">
+        <PropertyRef Name="LegalUnitId" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="LegalUnitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ItemsItemLocalisation">
+    <End Role="Items" Type="JewelleryModel.Store.Items" Multiplicity="1" />
+    <End Role="ItemLocalisation" Type="JewelleryModel.Store.ItemLocalisations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Items">
+        <PropertyRef Name="ItemId" />
+      </Principal>
+      <Dependent Role="ItemLocalisation">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ItemsItemPrices">
+    <End Role="Items" Type="JewelleryModel.Store.Items" Multiplicity="1" />
+    <End Role="ItemPrices" Type="JewelleryModel.Store.ItemPrices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Items">
+        <PropertyRef Name="ItemId" />
+      </Principal>
+      <Dependent Role="ItemPrices">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PriceCodesItemPrices">
+    <End Role="PriceCodes" Type="JewelleryModel.Store.PriceCodes" Multiplicity="1" />
+    <End Role="ItemPrices" Type="JewelleryModel.Store.ItemPrices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PriceCodes">
+        <PropertyRef Name="PriceCodeId" />
+      </Principal>
+      <Dependent Role="ItemPrices">
+        <PropertyRef Name="PriceCodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ItemPricesCurrencies">
+    <End Role="ItemPrices" Type="JewelleryModel.Store.ItemPrices" Multiplicity="*" />
+    <End Role="Currencies" Type="JewelleryModel.Store.Currencies" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Currencies">
+        <PropertyRef Name="CurrencyId" />
+      </Principal>
+      <Dependent Role="ItemPrices">
+        <PropertyRef Name="CurrencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MerchantsStores">
+    <End Role="Merchants" Type="JewelleryModel.Store.Merchants" Multiplicity="1" />
+    <End Role="Stores" Type="JewelleryModel.Store.Stores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Merchants">
+        <PropertyRef Name="MerchantId" />
+      </Principal>
+      <Dependent Role="Stores">
+        <PropertyRef Name="MerchantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PriceCodesStores">
+    <End Role="PriceCodes" Type="JewelleryModel.Store.PriceCodes" Multiplicity="1" />
+    <End Role="Stores" Type="JewelleryModel.Store.Stores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PriceCodes">
+        <PropertyRef Name="PriceCodeId" />
+      </Principal>
+      <Dependent Role="Stores">
+        <PropertyRef Name="PriceCodesPriceCodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ItemDescriptionsItems">
+    <End Role="ItemDescriptions" Type="JewelleryModel.Store.ItemDescriptions" Multiplicity="*" />
+    <End Role="Items" Type="JewelleryModel.Store.Items" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Items">
+        <PropertyRef Name="ItemId" />
+      </Principal>
+      <Dependent Role="ItemDescriptions">
+        <PropertyRef Name="Item_ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LegalUnitsStores">
+    <End Role="LegalUnits" Type="JewelleryModel.Store.LegalUnits" Multiplicity="1" />
+    <End Role="Stores" Type="JewelleryModel.Store.Stores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LegalUnits">
+        <PropertyRef Name="LegalUnitId" />
+      </Principal>
+      <Dependent Role="Stores">
+        <PropertyRef Name="LegalUnit_LegalUnitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ItemDescriptionsItemLocalisation">
+    <End Role="ItemDescriptions" Type="JewelleryModel.Store.ItemDescriptions" Multiplicity="*" />
+    <End Role="ItemLocalisation" Type="JewelleryModel.Store.ItemLocalisations" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="ItemLocalisation">
+        <PropertyRef Name="ItemLocalisationId" />
+      </Principal>
+      <Dependent Role="ItemDescriptions">
+        <PropertyRef Name="LocalisationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StoresStoreItems">
+    <End Role="Stores" Type="JewelleryModel.Store.Stores" Multiplicity="1" />
+    <End Role="StoreItems" Type="JewelleryModel.Store.StoreItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="StoreItems">
+        <PropertyRef Name="StoresStoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StoreItemsItems">
+    <End Role="StoreItems" Type="JewelleryModel.Store.StoreItems" Multiplicity="1" />
+    <End Role="Items" Type="JewelleryModel.Store.Items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StoreItems">
+        <PropertyRef Name="StoreItemId" />
+      </Principal>
+      <Dependent Role="Items">
+        <PropertyRef Name="StoreItemsStoreItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CurrencyID">
+    <End Role="Currencies" Type="JewelleryModel.Store.Currencies" Multiplicity="1" />
+    <End Role="Orders" Type="JewelleryModel.Store.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currencies">
+        <PropertyRef Name="CurrencyId" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="CurrencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StoresTerminals">
+    <End Role="Stores" Type="JewelleryModel.Store.Stores" Multiplicity="1" />
+    <End Role="Terminals" Type="JewelleryModel.Store.Terminals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="Terminals">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TerminalsOrders">
+    <End Role="Terminals" Type="JewelleryModel.Store.Terminals" Multiplicity="1" />
+    <End Role="Orders" Type="JewelleryModel.Store.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Terminals">
+        <PropertyRef Name="TerminalId" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="Terminal_TerminalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MerchantsOrders">
+    <End Role="Merchants" Type="JewelleryModel.Store.Merchants" Multiplicity="1" />
+    <End Role="Orders" Type="JewelleryModel.Store.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Merchants">
+        <PropertyRef Name="MerchantId" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="MerchantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StoresOrders">
+    <End Role="Stores" Type="JewelleryModel.Store.Stores" Multiplicity="1" />
+    <End Role="Orders" Type="JewelleryModel.Store.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OrdersOrderLines">
+    <End Role="Orders" Type="JewelleryModel.Store.Orders" Multiplicity="1" />
+    <End Role="OrderLines" Type="JewelleryModel.Store.OrderLines" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="OrderLines">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ItemsOrderLines">
+    <End Role="Items" Type="JewelleryModel.Store.Items" Multiplicity="*" />
+    <End Role="OrderLines" Type="JewelleryModel.Store.OrderLines" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="OrderLines">
+        <PropertyRef Name="OrderLineId" />
+      </Principal>
+      <Dependent Role="Items">
+        <PropertyRef Name="OrderLine_OrderLineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CurrenciesOrderLines">
+    <End Role="Currencies" Type="JewelleryModel.Store.Currencies" Multiplicity="1" />
+    <End Role="OrderLines" Type="JewelleryModel.Store.OrderLines" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currencies">
+        <PropertyRef Name="CurrencyId" />
+      </Principal>
+      <Dependent Role="OrderLines">
+        <PropertyRef Name="CurrencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OrderLinesOrderPaymentLines">
+    <End Role="OrderLines" Type="JewelleryModel.Store.OrderLines" Multiplicity="1" />
+    <End Role="OrderPaymentLines" Type="JewelleryModel.Store.OrderPaymentLines" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderLines">
+        <PropertyRef Name="OrderLineId" />
+      </Principal>
+      <Dependent Role="OrderPaymentLines">
+        <PropertyRef Name="OrderLineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PaymentsOrderPaymentLines">
+    <End Role="Payments" Type="JewelleryModel.Store.Payments" Multiplicity="1" />
+    <End Role="OrderPaymentLines" Type="JewelleryModel.Store.OrderPaymentLines" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payments">
+        <PropertyRef Name="PaymentId" />
+      </Principal>
+      <Dependent Role="OrderPaymentLines">
+        <PropertyRef Name="PaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CurrenciesOrderPaymentLines">
+    <End Role="Currencies" Type="JewelleryModel.Store.Currencies" Multiplicity="1" />
+    <End Role="OrderPaymentLines" Type="JewelleryModel.Store.OrderPaymentLines" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currencies">
+        <PropertyRef Name="CurrencyId" />
+      </Principal>
+      <Dependent Role="OrderPaymentLines">
+        <PropertyRef Name="Currency_CurrencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OrdersPayments">
+    <End Role="Orders" Type="JewelleryModel.Store.Orders" Multiplicity="1" />
+    <End Role="Payments" Type="JewelleryModel.Store.Payments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="Payments">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="JewelleryModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="JewelleryModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Items" EntityType="JewelleryModel.Items" />
+          <EntitySet Name="Products" EntityType="JewelleryModel.Products" />
+          <EntitySet Name="LegalUnits" EntityType="JewelleryModel.LegalUnits" />
+          <AssociationSet Name="ProductsItems" Association="JewelleryModel.ProductsItems">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="LegalUnitsProducts" Association="JewelleryModel.LegalUnitsProducts">
+            <End Role="LegalUnits" EntitySet="LegalUnits" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <EntitySet Name="ItemLocalisations" EntityType="JewelleryModel.ItemLocalisation" />
+          <AssociationSet Name="ItemsItemLocalisation" Association="JewelleryModel.ItemsItemLocalisation">
+            <End Role="Items" EntitySet="Items" />
+            <End Role="ItemLocalisation" EntitySet="ItemLocalisations" />
+          </AssociationSet>
+          <EntitySet Name="ItemPrices" EntityType="JewelleryModel.ItemPrices" />
+          <AssociationSet Name="ItemsItemPrices" Association="JewelleryModel.ItemsItemPrices">
+            <End Role="Items" EntitySet="Items" />
+            <End Role="ItemPrices" EntitySet="ItemPrices" />
+          </AssociationSet>
+          <EntitySet Name="PriceCodes" EntityType="JewelleryModel.PriceCodes" />
+          <EntitySet Name="Currencies" EntityType="JewelleryModel.Currencies" />
+          <AssociationSet Name="PriceCodesItemPrices" Association="JewelleryModel.PriceCodesItemPrices">
+            <End Role="PriceCodes" EntitySet="PriceCodes" />
+            <End Role="ItemPrices" EntitySet="ItemPrices" />
+          </AssociationSet>
+          <AssociationSet Name="ItemPricesCurrencies" Association="JewelleryModel.ItemPricesCurrencies">
+            <End Role="ItemPrices" EntitySet="ItemPrices" />
+            <End Role="Currencies" EntitySet="Currencies" />
+          </AssociationSet>
+          <EntitySet Name="Merchants" EntityType="JewelleryModel.Merchants" />
+          <EntitySet Name="Stores" EntityType="JewelleryModel.Stores" />
+          <AssociationSet Name="MerchantsStores" Association="JewelleryModel.MerchantsStores">
+            <End Role="Merchants" EntitySet="Merchants" />
+            <End Role="Stores" EntitySet="Stores" />
+          </AssociationSet>
+          <EntitySet Name="StoreItems" EntityType="JewelleryModel.StoreItems" />
+          <AssociationSet Name="PriceCodesStores" Association="JewelleryModel.PriceCodesStores">
+            <End Role="PriceCodes" EntitySet="PriceCodes" />
+            <End Role="Stores" EntitySet="Stores" />
+          </AssociationSet>
+          <EntitySet Name="ItemDescriptions" EntityType="JewelleryModel.ItemDescriptions" />
+          <AssociationSet Name="ItemDescriptionsItems" Association="JewelleryModel.ItemDescriptionsItems">
+            <End Role="ItemDescriptions" EntitySet="ItemDescriptions" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="LegalUnitsStores" Association="JewelleryModel.LegalUnitsStores">
+            <End Role="LegalUnits" EntitySet="LegalUnits" />
+            <End Role="Stores" EntitySet="Stores" />
+          </AssociationSet>
+          <AssociationSet Name="ItemDescriptionsItemLocalisation" Association="JewelleryModel.ItemDescriptionsItemLocalisation">
+            <End Role="ItemDescriptions" EntitySet="ItemDescriptions" />
+            <End Role="ItemLocalisation" EntitySet="ItemLocalisations" />
+          </AssociationSet>
+          <AssociationSet Name="StoresStoreItems" Association="JewelleryModel.StoresStoreItems">
+            <End Role="Stores" EntitySet="Stores" />
+            <End Role="StoreItems" EntitySet="StoreItems" />
+          </AssociationSet>
+          <AssociationSet Name="StoreItemsItems" Association="JewelleryModel.StoreItemsItems">
+            <End Role="StoreItems" EntitySet="StoreItems" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <EntitySet Name="Orders" EntityType="JewelleryModel.Orders" />
+          <EntitySet Name="OrderLines" EntityType="JewelleryModel.OrderLines" />
+          <EntitySet Name="OrderPaymentLines" EntityType="JewelleryModel.OrderPaymentLines" />
+          <AssociationSet Name="CurrencyID" Association="JewelleryModel.CurrencyID">
+            <End Role="Currencies" EntitySet="Currencies" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <EntitySet Name="Terminals" EntityType="JewelleryModel.Terminals" />
+          <AssociationSet Name="StoresTerminals" Association="JewelleryModel.StoresTerminals">
+            <End Role="Stores" EntitySet="Stores" />
+            <End Role="Terminals" EntitySet="Terminals" />
+          </AssociationSet>
+          <AssociationSet Name="TerminalsOrders" Association="JewelleryModel.TerminalsOrders">
+            <End Role="Terminals" EntitySet="Terminals" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="MerchantsOrders" Association="JewelleryModel.MerchantsOrders">
+            <End Role="Merchants" EntitySet="Merchants" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="StoresOrders" Association="JewelleryModel.StoresOrders">
+            <End Role="Stores" EntitySet="Stores" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="OrdersOrderLines" Association="JewelleryModel.OrdersOrderLines">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderLines" EntitySet="OrderLines" />
+          </AssociationSet>
+          <AssociationSet Name="ItemsOrderLines" Association="JewelleryModel.ItemsOrderLines">
+            <End Role="Items" EntitySet="Items" />
+            <End Role="OrderLines" EntitySet="OrderLines" />
+          </AssociationSet>
+          <AssociationSet Name="CurrenciesOrderLines" Association="JewelleryModel.CurrenciesOrderLines">
+            <End Role="Currencies" EntitySet="Currencies" />
+            <End Role="OrderLines" EntitySet="OrderLines" />
+          </AssociationSet>
+          <AssociationSet Name="OrderLinesOrderPaymentLines" Association="JewelleryModel.OrderLinesOrderPaymentLines">
+            <End Role="OrderLines" EntitySet="OrderLines" />
+            <End Role="OrderPaymentLines" EntitySet="OrderPaymentLines" />
+          </AssociationSet>
+          <EntitySet Name="Payments" EntityType="JewelleryModel.Payments" />
+          <AssociationSet Name="PaymentsOrderPaymentLines" Association="JewelleryModel.PaymentsOrderPaymentLines">
+            <End Role="Payments" EntitySet="Payments" />
+            <End Role="OrderPaymentLines" EntitySet="OrderPaymentLines" />
+          </AssociationSet>
+          <AssociationSet Name="CurrenciesOrderPaymentLines" Association="JewelleryModel.CurrenciesOrderPaymentLines">
+            <End Role="Currencies" EntitySet="Currencies" />
+            <End Role="OrderPaymentLines" EntitySet="OrderPaymentLines" />
+          </AssociationSet>
+          <AssociationSet Name="OrdersPayments" Association="JewelleryModel.OrdersPayments">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Items">
+          <Key>
+            <PropertyRef Name="ItemId" />
+          </Key>
+          <Property Name="ItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="AXItemId" Type="String" Nullable="false" />
+          <Property Name="ItemSizeId" Type="String" Nullable="false" />
+          <Property Name="ItemTypeId" Type="String" Nullable="false" />
+          <Property Name="ItemBarcode" Type="String" Nullable="false" />
+          <Property Name="ItemModifiedBy" Type="String" Nullable="false" />
+          <Property Name="ItemModifiedDateTime" Type="String" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="JewelleryModel.ProductsItems" FromRole="Items" ToRole="Products" />
+          <NavigationProperty Name="ItemLocalisations" Relationship="JewelleryModel.ItemsItemLocalisation" FromRole="Items" ToRole="ItemLocalisation" />
+          <NavigationProperty Name="ItemPrices" Relationship="JewelleryModel.ItemsItemPrices" FromRole="Items" ToRole="ItemPrices" />
+          <NavigationProperty Name="ItemDescription" Relationship="JewelleryModel.ItemDescriptionsItems" FromRole="Items" ToRole="ItemDescriptions" />
+          <NavigationProperty Name="StoreItem" Relationship="JewelleryModel.StoreItemsItems" FromRole="Items" ToRole="StoreItems" />
+          <Property Name="StoreItemsStoreItemId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="OrderLine" Relationship="JewelleryModel.ItemsOrderLines" FromRole="Items" ToRole="OrderLines" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LegalUnitId" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="50" />
+          <NavigationProperty Name="Items" Relationship="JewelleryModel.ProductsItems" FromRole="Products" ToRole="Items" />
+          <Property Name="ProductNo" Type="String" Nullable="false" />
+          <Property Name="ProductTypeId" Type="String" Nullable="false" />
+          <Property Name="ProductModifiedBy" Type="String" Nullable="false" />
+          <Property Name="ProductModifiedDateTime" Type="String" Nullable="false" />
+          <NavigationProperty Name="LegalUnit" Relationship="JewelleryModel.LegalUnitsProducts" FromRole="Products" ToRole="LegalUnits" />
+        </EntityType>
+        <EntityType Name="LegalUnits">
+          <Key>
+            <PropertyRef Name="LegalUnitId" />
+          </Key>
+          <Property Name="LegalUnitId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Products" Relationship="JewelleryModel.LegalUnitsProducts" FromRole="LegalUnits" ToRole="Products" />
+          <Property Name="LegalUnitCode" Type="String" Nullable="false" />
+          <Property Name="LegalUnitName" Type="String" Nullable="false" />
+          <Property Name="LegalUnitModifiedBy" Type="String" Nullable="false" />
+          <Property Name="LegalUnitModifiedDateTime" Type="String" Nullable="false" />
+          <NavigationProperty Name="Stores" Relationship="JewelleryModel.LegalUnitsStores" FromRole="LegalUnits" ToRole="Stores" />
+        </EntityType>
+        <Association Name="ProductsItems">
+          <End Type="JewelleryModel.Products" Role="Products" Multiplicity="1" />
+          <End Type="JewelleryModel.Items" Role="Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LegalUnitsProducts">
+          <End Type="JewelleryModel.LegalUnits" Role="LegalUnits" Multiplicity="1" />
+          <End Type="JewelleryModel.Products" Role="Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalUnits">
+              <PropertyRef Name="LegalUnitId" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="LegalUnitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ItemLocalisation">
+          <Key>
+            <PropertyRef Name="ItemLocalisationId" />
+          </Key>
+          <Property Name="ItemLocalisationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemId" Type="Int32" Nullable="false" />
+          <Property Name="NameTranslated" Type="String" Nullable="false" />
+          <Property Name="LanguageCultureCode" Type="String" Nullable="false" />
+          <Property Name="LanguageName" Type="String" Nullable="false" />
+          <Property Name="ISO639_2" Type="String" Nullable="false" />
+          <Property Name="ISO639_3" Type="String" Nullable="false" />
+          <Property Name="ItemLocalisationModifiedBy" Type="String" Nullable="false" />
+          <Property Name="ItemLocalisationModifiedDateTime" Type="String" Nullable="false" />
+          <NavigationProperty Name="Item" Relationship="JewelleryModel.ItemsItemLocalisation" FromRole="ItemLocalisation" ToRole="Items" />
+          <NavigationProperty Name="ItemDescriptions" Relationship="JewelleryModel.ItemDescriptionsItemLocalisation" FromRole="ItemLocalisation" ToRole="ItemDescriptions" />
+        </EntityType>
+        <Association Name="ItemsItemLocalisation">
+          <End Type="JewelleryModel.Items" Role="Items" Multiplicity="1" />
+          <End Type="JewelleryModel.ItemLocalisation" Role="ItemLocalisation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Items">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="ItemLocalisation">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ItemPrices">
+          <Key>
+            <PropertyRef Name="PriceId" />
+          </Key>
+          <Property Name="PriceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Item" Relationship="JewelleryModel.ItemsItemPrices" FromRole="ItemPrices" ToRole="Items" />
+          <Property Name="ItemId" Type="Int32" Nullable="false" />
+          <Property Name="CurrencyId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PriceCode" Relationship="JewelleryModel.PriceCodesItemPrices" FromRole="ItemPrices" ToRole="PriceCodes" />
+          <Property Name="PriceCodeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Currency" Relationship="JewelleryModel.ItemPricesCurrencies" FromRole="ItemPrices" ToRole="Currencies" />
+          <Property Name="ItemPrice" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="ItemsItemPrices">
+          <End Type="JewelleryModel.Items" Role="Items" Multiplicity="1" />
+          <End Type="JewelleryModel.ItemPrices" Role="ItemPrices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Items">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="ItemPrices">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PriceCodes">
+          <Key>
+            <PropertyRef Name="PriceCodeId" />
+          </Key>
+          <Property Name="PriceCodeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="ItemPrices" Relationship="JewelleryModel.PriceCodesItemPrices" FromRole="PriceCodes" ToRole="ItemPrices" />
+          <Property Name="PriceCodeModifiedBy" Type="String" Nullable="false" />
+          <Property Name="PriceCodeModifiedDateTime" Type="String" Nullable="false" />
+          <NavigationProperty Name="Stores" Relationship="JewelleryModel.PriceCodesStores" FromRole="PriceCodes" ToRole="Stores" />
+        </EntityType>
+        <EntityType Name="Currencies">
+          <Key>
+            <PropertyRef Name="CurrencyId" />
+          </Key>
+          <Property Name="CurrencyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="ItemPrices" Relationship="JewelleryModel.ItemPricesCurrencies" FromRole="Currencies" ToRole="ItemPrices" />
+          <Property Name="CurrencyModifiedBy" Type="String" Nullable="false" />
+          <Property Name="CurrencyModifiedDateTime" Type="String" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="JewelleryModel.CurrencyID" FromRole="Currencies" ToRole="Orders" />
+          <NavigationProperty Name="OrderLines" Relationship="JewelleryModel.CurrenciesOrderLines" FromRole="Currencies" ToRole="OrderLines" />
+          <NavigationProperty Name="OrderPaymentLines" Relationship="JewelleryModel.CurrenciesOrderPaymentLines" FromRole="Currencies" ToRole="OrderPaymentLines" />
+        </EntityType>
+        <Association Name="PriceCodesItemPrices">
+          <End Type="JewelleryModel.PriceCodes" Role="PriceCodes" Multiplicity="1" />
+          <End Type="JewelleryModel.ItemPrices" Role="ItemPrices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PriceCodes">
+              <PropertyRef Name="PriceCodeId" />
+            </Principal>
+            <Dependent Role="ItemPrices">
+              <PropertyRef Name="PriceCodeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ItemPricesCurrencies">
+          <End Type="JewelleryModel.ItemPrices" Role="ItemPrices" Multiplicity="*" />
+          <End Type="JewelleryModel.Currencies" Role="Currencies" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Currencies">
+              <PropertyRef Name="CurrencyId" />
+            </Principal>
+            <Dependent Role="ItemPrices">
+              <PropertyRef Name="CurrencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Merchants">
+          <Key>
+            <PropertyRef Name="MerchantId" />
+          </Key>
+          <Property Name="MerchantId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Stores" Relationship="JewelleryModel.MerchantsStores" FromRole="Merchants" ToRole="Stores" />
+          <Property Name="MerchantName" Type="String" Nullable="false" />
+          <Property Name="MerchantPhone" Type="String" Nullable="false" />
+          <Property Name="MerchantEmail" Type="String" Nullable="false" />
+          <Property Name="MerchantAddress" Type="String" Nullable="false" />
+          <Property Name="MerchantCity" Type="String" Nullable="false" />
+          <Property Name="MerchantPostCode" Type="String" Nullable="false" />
+          <Property Name="MerchantCountry" Type="String" Nullable="false" />
+          <Property Name="MerchantModifiedBy" Type="String" Nullable="false" />
+          <Property Name="MerchantModifiedDateTime" Type="String" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="JewelleryModel.MerchantsOrders" FromRole="Merchants" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Stores">
+          <Key>
+            <PropertyRef Name="StoreId" />
+          </Key>
+          <Property Name="StoreId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Merchant" Relationship="JewelleryModel.MerchantsStores" FromRole="Stores" ToRole="Merchants" />
+          <Property Name="MerchantId" Type="Int32" Nullable="false" />
+          <Property Name="StoreName" Type="String" Nullable="false" />
+          <Property Name="StorePhone" Type="String" Nullable="false" />
+          <Property Name="StoreEmail" Type="String" Nullable="false" />
+          <Property Name="StoreAddress" Type="String" Nullable="false" />
+          <Property Name="StoreCity" Type="String" Nullable="false" />
+          <Property Name="StorePostCode" Type="String" Nullable="false" />
+          <NavigationProperty Name="PriceCode" Relationship="JewelleryModel.PriceCodesStores" FromRole="Stores" ToRole="PriceCodes" />
+          <Property Name="PriceCodesPriceCodeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LegalUnit" Relationship="JewelleryModel.LegalUnitsStores" FromRole="Stores" ToRole="LegalUnits" />
+          <Property Name="LegalUnitId" Type="String" Nullable="false" />
+          <Property Name="StoreModifiedBy" Type="String" Nullable="false" />
+          <Property Name="StoreModifiedDateTime" Type="String" Nullable="false" />
+          <NavigationProperty Name="StoreItems" Relationship="JewelleryModel.StoresStoreItems" FromRole="Stores" ToRole="StoreItems" />
+          <NavigationProperty Name="Terminals" Relationship="JewelleryModel.StoresTerminals" FromRole="Stores" ToRole="Terminals" />
+          <NavigationProperty Name="Orders" Relationship="JewelleryModel.StoresOrders" FromRole="Stores" ToRole="Orders" />
+        </EntityType>
+        <Association Name="MerchantsStores">
+          <End Type="JewelleryModel.Merchants" Role="Merchants" Multiplicity="1" />
+          <End Type="JewelleryModel.Stores" Role="Stores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Merchants">
+              <PropertyRef Name="MerchantId" />
+            </Principal>
+            <Dependent Role="Stores">
+              <PropertyRef Name="MerchantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="StoreItems">
+          <Key>
+            <PropertyRef Name="StoreItemId" />
+          </Key>
+          <Property Name="StoreItemId" Type="Int32" Nullable="false" />
+          <Property Name="StoreId" Nullable="false" Type="Int32" />
+          <Property Name="StoresStoreId" Type="Int32" Nullable="false" />
+          <Property Name="StoreIdModifiedBy" Type="String" Nullable="false" />
+          <Property Name="StoreIdModifiedDateTime" Type="String" Nullable="false" />
+          <NavigationProperty Name="Store" Relationship="JewelleryModel.StoresStoreItems" FromRole="StoreItems" ToRole="Stores" />
+          <NavigationProperty Name="Items" Relationship="JewelleryModel.StoreItemsItems" FromRole="StoreItems" ToRole="Items" />
+        </EntityType>
+        <Association Name="PriceCodesStores">
+          <End Type="JewelleryModel.PriceCodes" Role="PriceCodes" Multiplicity="1" />
+          <End Type="JewelleryModel.Stores" Role="Stores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PriceCodes">
+              <PropertyRef Name="PriceCodeId" />
+            </Principal>
+            <Dependent Role="Stores">
+              <PropertyRef Name="PriceCodesPriceCodeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ItemDescriptions">
+          <Key>
+            <PropertyRef Name="ItemDescriptionId" />
+          </Key>
+          <Property Name="ItemDescriptionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Item" Relationship="JewelleryModel.ItemDescriptionsItems" FromRole="ItemDescriptions" ToRole="Items" />
+          <Property Name="ItemId" Type="String" Nullable="false" />
+          <Property Name="ItemName" Type="String" Nullable="false" />
+          <Property Name="ItemDescription" Type="String" Nullable="false" />
+          <Property Name="ItemColor" Type="String" Nullable="false" />
+          <Property Name="ItemMaterial" Type="String" Nullable="false" />
+          <Property Name="ItemTheme" Type="String" Nullable="false" />
+          <Property Name="ItemStone" Type="String" Nullable="false" />
+          <Property Name="ItemDescrModifiedBy" Type="String" Nullable="false" />
+          <Property Name="ItemDescModifiedDateTime" Type="String" Nullable="false" />
+          <NavigationProperty Name="ItemLocalisation" Relationship="JewelleryModel.ItemDescriptionsItemLocalisation" FromRole="ItemDescriptions" ToRole="ItemLocalisation" />
+          <Property Name="LocalisationId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ItemDescriptionsItems">
+          <End Type="JewelleryModel.ItemDescriptions" Role="ItemDescriptions" Multiplicity="1" />
+          <End Type="JewelleryModel.Items" Role="Items" Multiplicity="1" />
+        </Association>
+        <Association Name="LegalUnitsStores">
+          <End Type="JewelleryModel.LegalUnits" Role="LegalUnits" Multiplicity="1" />
+          <End Type="JewelleryModel.Stores" Role="Stores" Multiplicity="*" />
+        </Association>
+        <Association Name="ItemDescriptionsItemLocalisation">
+          <End Type="JewelleryModel.ItemDescriptions" Role="ItemDescriptions" Multiplicity="*" />
+          <End Type="JewelleryModel.ItemLocalisation" Role="ItemLocalisation" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="ItemLocalisation">
+              <PropertyRef Name="ItemLocalisationId" />
+            </Principal>
+            <Dependent Role="ItemDescriptions">
+              <PropertyRef Name="LocalisationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StoresStoreItems">
+          <End Type="JewelleryModel.Stores" Role="Stores" Multiplicity="1" />
+          <End Type="JewelleryModel.StoreItems" Role="StoreItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stores">
+              <PropertyRef Name="StoreId" />
+            </Principal>
+            <Dependent Role="StoreItems">
+              <PropertyRef Name="StoresStoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StoreItemsItems">
+          <End Type="JewelleryModel.StoreItems" Role="StoreItems" Multiplicity="1" />
+          <End Type="JewelleryModel.Items" Role="Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StoreItems">
+              <PropertyRef Name="StoreItemId" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="StoreItemsStoreItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionTime" Type="DateTime" Nullable="false" />
+          <Property Name="CashierName" Type="String" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="Currency" Relationship="JewelleryModel.CurrencyID" FromRole="Orders" ToRole="Currencies" />
+          <Property Name="CurrencyId" Type="Int32" Nullable="false" />
+          <Property Name="Discount" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="Terminal" Relationship="JewelleryModel.TerminalsOrders" FromRole="Orders" ToRole="Terminals" />
+          <Property Name="Note" Type="String" Nullable="false" />
+          <NavigationProperty Name="Merchant" Relationship="JewelleryModel.MerchantsOrders" FromRole="Orders" ToRole="Merchants" />
+          <Property Name="MerchantId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Store" Relationship="JewelleryModel.StoresOrders" FromRole="Orders" ToRole="Stores" />
+          <Property Name="StoreId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="OrderLines" Relationship="JewelleryModel.OrdersOrderLines" FromRole="Orders" ToRole="OrderLines" />
+          <NavigationProperty Name="Payments" Relationship="JewelleryModel.OrdersPayments" FromRole="Orders" ToRole="Payments" />
+        </EntityType>
+        <EntityType Name="OrderLines">
+          <Key>
+            <PropertyRef Name="OrderLineId" />
+          </Key>
+          <Property Name="OrderLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Order" Relationship="JewelleryModel.OrdersOrderLines" FromRole="OrderLines" ToRole="Orders" />
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Item" Relationship="JewelleryModel.ItemsOrderLines" FromRole="OrderLines" ToRole="Items" />
+          <Property Name="ItemId" Type="String" Nullable="false" />
+          <Property Name="Count" Type="Int32" Nullable="false" />
+          <Property Name="Ammount" Type="Decimal" Nullable="false" />
+          <Property Name="Discount" Type="Decimal" Nullable="false" />
+          <Property Name="Note" Type="String" Nullable="false" />
+          <NavigationProperty Name="Currency" Relationship="JewelleryModel.CurrenciesOrderLines" FromRole="OrderLines" ToRole="Currencies" />
+          <Property Name="CurrencyId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="OrderPaymentLines" Relationship="JewelleryModel.OrderLinesOrderPaymentLines" FromRole="OrderLines" ToRole="OrderPaymentLines" />
+        </EntityType>
+        <EntityType Name="OrderPaymentLines">
+          <Key>
+            <PropertyRef Name="OrderPaymentLineId" />
+          </Key>
+          <Property Name="OrderPaymentLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="OrderLine" Relationship="JewelleryModel.OrderLinesOrderPaymentLines" FromRole="OrderPaymentLines" ToRole="OrderLines" />
+          <Property Name="OrderLineId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Payment" Relationship="JewelleryModel.PaymentsOrderPaymentLines" FromRole="OrderPaymentLines" ToRole="Payments" />
+          <Property Name="PaymentId" Type="Int32" Nullable="false" />
+          <Property Name="PaymentType" Type="String" Nullable="false" />
+          <NavigationProperty Name="Currency" Relationship="JewelleryModel.CurrenciesOrderPaymentLines" FromRole="OrderPaymentLines" ToRole="Currencies" />
+          <Property Name="CurrencyId" Type="String" Nullable="false" />
+          <Property Name="Note" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="CurrencyID">
+          <End Type="JewelleryModel.Currencies" Role="Currencies" Multiplicity="1" />
+          <End Type="JewelleryModel.Orders" Role="Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currencies">
+              <PropertyRef Name="CurrencyId" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="CurrencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Terminals">
+          <Key>
+            <PropertyRef Name="TerminalId" />
+          </Key>
+          <Property Name="TerminalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Store" Relationship="JewelleryModel.StoresTerminals" FromRole="Terminals" ToRole="Stores" />
+          <Property Name="StoreId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="JewelleryModel.TerminalsOrders" FromRole="Terminals" ToRole="Orders" />
+          <Property Name="OrderId" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="StoresTerminals">
+          <End Type="JewelleryModel.Stores" Role="Stores" Multiplicity="1" />
+          <End Type="JewelleryModel.Terminals" Role="Terminals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stores">
+              <PropertyRef Name="StoreId" />
+            </Principal>
+            <Dependent Role="Terminals">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TerminalsOrders">
+          <End Type="JewelleryModel.Terminals" Role="Terminals" Multiplicity="1" />
+          <End Type="JewelleryModel.Orders" Role="Orders" Multiplicity="*" />
+        </Association>
+        <Association Name="MerchantsOrders">
+          <End Type="JewelleryModel.Merchants" Role="Merchants" Multiplicity="1" />
+          <End Type="JewelleryModel.Orders" Role="Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Merchants">
+              <PropertyRef Name="MerchantId" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="MerchantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StoresOrders">
+          <End Type="JewelleryModel.Stores" Role="Stores" Multiplicity="1" />
+          <End Type="JewelleryModel.Orders" Role="Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stores">
+              <PropertyRef Name="StoreId" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OrdersOrderLines">
+          <End Type="JewelleryModel.Orders" Role="Orders" Multiplicity="1" />
+          <End Type="JewelleryModel.OrderLines" Role="OrderLines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="OrderLines">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ItemsOrderLines">
+          <End Type="JewelleryModel.Items" Role="Items" Multiplicity="1" />
+          <End Type="JewelleryModel.OrderLines" Role="OrderLines" Multiplicity="1" />
+        </Association>
+        <Association Name="CurrenciesOrderLines">
+          <End Type="JewelleryModel.Currencies" Role="Currencies" Multiplicity="1" />
+          <End Type="JewelleryModel.OrderLines" Role="OrderLines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currencies">
+              <PropertyRef Name="CurrencyId" />
+            </Principal>
+            <Dependent Role="OrderLines">
+              <PropertyRef Name="CurrencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OrderLinesOrderPaymentLines">
+          <End Type="JewelleryModel.OrderLines" Role="OrderLines" Multiplicity="1" />
+          <End Type="JewelleryModel.OrderPaymentLines" Role="OrderPaymentLines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderLines">
+              <PropertyRef Name="OrderLineId" />
+            </Principal>
+            <Dependent Role="OrderPaymentLines">
+              <PropertyRef Name="OrderLineId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Payments">
+          <Key>
+            <PropertyRef Name="PaymentId" />
+          </Key>
+          <Property Name="PaymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="OrderPaymentLines" Relationship="JewelleryModel.PaymentsOrderPaymentLines" FromRole="Payments" ToRole="OrderPaymentLines" />
+          <Property Name="Ammount" Type="Decimal" Nullable="false" />
+          <Property Name="CurrencyId" Type="String" Nullable="false" />
+          <Property Name="Note" Type="String" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="JewelleryModel.OrdersPayments" FromRole="Payments" ToRole="Orders" />
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="PaymentsOrderPaymentLines">
+          <End Type="JewelleryModel.Payments" Role="Payments" Multiplicity="1" />
+          <End Type="JewelleryModel.OrderPaymentLines" Role="OrderPaymentLines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payments">
+              <PropertyRef Name="PaymentId" />
+            </Principal>
+            <Dependent Role="OrderPaymentLines">
+              <PropertyRef Name="PaymentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CurrenciesOrderPaymentLines">
+          <End Type="JewelleryModel.Currencies" Role="Currencies" Multiplicity="1" />
+          <End Type="JewelleryModel.OrderPaymentLines" Role="OrderPaymentLines" Multiplicity="*" />
+        </Association>
+        <Association Name="OrdersPayments">
+          <End Type="JewelleryModel.Orders" Role="Orders" Multiplicity="1" />
+          <End Type="JewelleryModel.Payments" Role="Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JewelleryModelStoreContainer" CdmEntityContainer="JewelleryModelContainer">
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.Items)">
+        <MappingFragment StoreEntitySet="Items">
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="AXItemId" ColumnName="AXItemId" />
+          <ScalarProperty Name="ItemSizeId" ColumnName="ItemSizeId" />
+          <ScalarProperty Name="ItemTypeId" ColumnName="ItemTypeId" />
+          <ScalarProperty Name="ItemBarcode" ColumnName="ItemBarcode" />
+          <ScalarProperty Name="ItemModifiedBy" ColumnName="ItemModifiedBy" />
+          <ScalarProperty Name="ItemModifiedDateTime" ColumnName="ItemModifiedDateTime" />
+          <ScalarProperty Name="StoreItemsStoreItemId" ColumnName="StoreItemsStoreItemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.Products)">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="LegalUnitId" ColumnName="LegalUnitId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductNo" ColumnName="ProductNo" />
+          <ScalarProperty Name="ProductTypeId" ColumnName="ProductTypeId" />
+          <ScalarProperty Name="ProductModifiedBy" ColumnName="ProductModifiedBy" />
+          <ScalarProperty Name="ProductModifiedDateTime" ColumnName="ProductModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LegalUnits">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.LegalUnits)">
+        <MappingFragment StoreEntitySet="LegalUnits">
+          <ScalarProperty Name="LegalUnitId" ColumnName="LegalUnitId" />
+          <ScalarProperty Name="LegalUnitCode" ColumnName="LegalUnitCode" />
+          <ScalarProperty Name="LegalUnitName" ColumnName="LegalUnitName" />
+          <ScalarProperty Name="LegalUnitModifiedBy" ColumnName="LegalUnitModifiedBy" />
+          <ScalarProperty Name="LegalUnitModifiedDateTime" ColumnName="LegalUnitModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemLocalisations">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.ItemLocalisation)">
+        <MappingFragment StoreEntitySet="ItemLocalisations">
+          <ScalarProperty Name="ItemLocalisationId" ColumnName="ItemLocalisationId" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="NameTranslated" ColumnName="NameTranslated" />
+          <ScalarProperty Name="LanguageCultureCode" ColumnName="LanguageCultureCode" />
+          <ScalarProperty Name="LanguageName" ColumnName="LanguageName" />
+          <ScalarProperty Name="ISO639_2" ColumnName="ISO639_2" />
+          <ScalarProperty Name="ISO639_3" ColumnName="ISO639_3" />
+          <ScalarProperty Name="ItemLocalisationModifiedBy" ColumnName="ItemLocalisationModifiedBy" />
+          <ScalarProperty Name="ItemLocalisationModifiedDateTime" ColumnName="ItemLocalisationModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemPrices">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.ItemPrices)">
+        <MappingFragment StoreEntitySet="ItemPrices">
+          <ScalarProperty Name="PriceId" ColumnName="PriceId" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+          <ScalarProperty Name="PriceCodeId" ColumnName="PriceCodeId" />
+          <ScalarProperty Name="ItemPrice" ColumnName="ItemPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PriceCodes">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.PriceCodes)">
+        <MappingFragment StoreEntitySet="PriceCodes">
+          <ScalarProperty Name="PriceCodeId" ColumnName="PriceCodeId" />
+          <ScalarProperty Name="PriceCodeModifiedBy" ColumnName="PriceCodeModifiedBy" />
+          <ScalarProperty Name="PriceCodeModifiedDateTime" ColumnName="PriceCodeModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Currencies">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.Currencies)">
+        <MappingFragment StoreEntitySet="Currencies">
+          <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+          <ScalarProperty Name="CurrencyModifiedBy" ColumnName="CurrencyModifiedBy" />
+          <ScalarProperty Name="CurrencyModifiedDateTime" ColumnName="CurrencyModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Merchants">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.Merchants)">
+        <MappingFragment StoreEntitySet="Merchants">
+          <ScalarProperty Name="MerchantId" ColumnName="MerchantId" />
+          <ScalarProperty Name="MerchantName" ColumnName="MerchantName" />
+          <ScalarProperty Name="MerchantPhone" ColumnName="MerchantPhone" />
+          <ScalarProperty Name="MerchantEmail" ColumnName="MerchantEmail" />
+          <ScalarProperty Name="MerchantAddress" ColumnName="MerchantAddress" />
+          <ScalarProperty Name="MerchantCity" ColumnName="MerchantCity" />
+          <ScalarProperty Name="MerchantPostCode" ColumnName="MerchantPostCode" />
+          <ScalarProperty Name="MerchantCountry" ColumnName="MerchantCountry" />
+          <ScalarProperty Name="MerchantModifiedBy" ColumnName="MerchantModifiedBy" />
+          <ScalarProperty Name="MerchantModifiedDateTime" ColumnName="MerchantModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stores">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.Stores)">
+        <MappingFragment StoreEntitySet="Stores">
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="MerchantId" ColumnName="MerchantId" />
+          <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+          <ScalarProperty Name="StorePhone" ColumnName="StorePhone" />
+          <ScalarProperty Name="StoreEmail" ColumnName="StoreEmail" />
+          <ScalarProperty Name="StoreAddress" ColumnName="StoreAddress" />
+          <ScalarProperty Name="StoreCity" ColumnName="StoreCity" />
+          <ScalarProperty Name="StorePostCode" ColumnName="StorePostCode" />
+          <ScalarProperty Name="PriceCodesPriceCodeId" ColumnName="PriceCodesPriceCodeId" />
+          <ScalarProperty Name="LegalUnitId" ColumnName="LegalUnitId" />
+          <ScalarProperty Name="StoreModifiedBy" ColumnName="StoreModifiedBy" />
+          <ScalarProperty Name="StoreModifiedDateTime" ColumnName="StoreModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StoreItems">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.StoreItems)">
+        <MappingFragment StoreEntitySet="StoreItems">
+          <ScalarProperty Name="StoreItemId" ColumnName="StoreItemId" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="StoresStoreId" ColumnName="StoresStoreId" />
+          <ScalarProperty Name="StoreIdModifiedBy" ColumnName="StoreIdModifiedBy" />
+          <ScalarProperty Name="StoreIdModifiedDateTime" ColumnName="StoreIdModifiedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemDescriptions">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.ItemDescriptions)">
+        <MappingFragment StoreEntitySet="ItemDescriptions">
+          <ScalarProperty Name="ItemDescriptionId" ColumnName="ItemDescriptionId" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemDescription" ColumnName="ItemDescription" />
+          <ScalarProperty Name="ItemColor" ColumnName="ItemColor" />
+          <ScalarProperty Name="ItemMaterial" ColumnName="ItemMaterial" />
+          <ScalarProperty Name="ItemTheme" ColumnName="ItemTheme" />
+          <ScalarProperty Name="ItemStone" ColumnName="ItemStone" />
+          <ScalarProperty Name="ItemDescrModifiedBy" ColumnName="ItemDescrModifiedBy" />
+          <ScalarProperty Name="ItemDescModifiedDateTime" ColumnName="ItemDescModifiedDateTime" />
+          <ScalarProperty Name="LocalisationId" ColumnName="LocalisationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.Orders)">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="TransactionTime" ColumnName="TransactionTime" />
+          <ScalarProperty Name="CashierName" ColumnName="CashierName" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="MerchantId" ColumnName="MerchantId" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderLines">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.OrderLines)">
+        <MappingFragment StoreEntitySet="OrderLines">
+          <ScalarProperty Name="OrderLineId" ColumnName="OrderLineId" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Ammount" ColumnName="Ammount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderPaymentLines">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.OrderPaymentLines)">
+        <MappingFragment StoreEntitySet="OrderPaymentLines">
+          <ScalarProperty Name="OrderPaymentLineId" ColumnName="OrderPaymentLineId" />
+          <ScalarProperty Name="OrderLineId" ColumnName="OrderLineId" />
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+          <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Terminals">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.Terminals)">
+        <MappingFragment StoreEntitySet="Terminals">
+          <ScalarProperty Name="TerminalId" ColumnName="TerminalId" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="IsTypeOf(JewelleryModel.Payments)">
+        <MappingFragment StoreEntitySet="Payments">
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="Ammount" ColumnName="Ammount" />
+          <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ItemDescriptionsItems" TypeName="JewelleryModel.ItemDescriptionsItems" StoreEntitySet="ItemDescriptions">
+      <EndProperty Name="Items">
+        <ScalarProperty Name="ItemId" ColumnName="Item_ItemId" />
+      </EndProperty>
+      <EndProperty Name="ItemDescriptions">
+        <ScalarProperty Name="ItemDescriptionId" ColumnName="ItemDescriptionId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="LegalUnitsStores" TypeName="JewelleryModel.LegalUnitsStores" StoreEntitySet="Stores">
+      <EndProperty Name="LegalUnits">
+        <ScalarProperty Name="LegalUnitId" ColumnName="LegalUnit_LegalUnitId" />
+      </EndProperty>
+      <EndProperty Name="Stores">
+        <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TerminalsOrders" TypeName="JewelleryModel.TerminalsOrders" StoreEntitySet="Orders">
+      <EndProperty Name="Terminals">
+        <ScalarProperty Name="TerminalId" ColumnName="Terminal_TerminalId" />
+      </EndProperty>
+      <EndProperty Name="Orders">
+        <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ItemsOrderLines" TypeName="JewelleryModel.ItemsOrderLines" StoreEntitySet="Items">
+      <EndProperty Name="OrderLines">
+        <ScalarProperty Name="OrderLineId" ColumnName="OrderLine_OrderLineId" />
+      </EndProperty>
+      <EndProperty Name="Items">
+        <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CurrenciesOrderPaymentLines" TypeName="JewelleryModel.CurrenciesOrderPaymentLines" StoreEntitySet="OrderPaymentLines">
+      <EndProperty Name="Currencies">
+        <ScalarProperty Name="CurrencyId" ColumnName="Currency_CurrencyId" />
+      </EndProperty>
+      <EndProperty Name="OrderPaymentLines">
+        <ScalarProperty Name="OrderPaymentLineId" ColumnName="OrderPaymentLineId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

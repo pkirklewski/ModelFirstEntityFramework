@@ -1,0 +1,14 @@
+C:\Users\extpiki\source\repos\ModelFirstEntityFramework\ModelFirstEntityFramework\bin\Debug\ModelFirstEntityFramework.exe.config
+C:\Users\extpiki\source\repos\ModelFirstEntityFramework\ModelFirstEntityFramework\bin\Debug\ModelFirstEntityFramework.exe
+C:\Users\extpiki\source\repos\ModelFirstEntityFramework\ModelFirstEntityFramework\bin\Debug\ModelFirstEntityFramework.pdb
+C:\Users\extpiki\source\repos\ModelFirstEntityFramework\ModelFirstEntityFramework\bin\Debug\EntityFramework.dll
+C:\Users\extpiki\source\repos\ModelFirstEntityFramework\ModelFirstEntityFramework\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\extpiki\source\repos\ModelFirstEntityFramework\ModelFirstEntityFramework\bin\Debug\EntityFramework.xml
+C:\Users\extpiki\source\repos\ModelFirstEntityFramework\ModelFirstEntityFramework\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\extpiki\source\repos\ModelFirstEntityFramework\ModelFirstEntityFramework\obj\Debug\ModelFirstEntityFramework.csprojAssemblyReference.cache
+C:\Users\extpiki\source\repos\ModelFirstEntityFramework\ModelFirstEntityFramework\obj\Debug\ModelFirstEntityFramework.Properties.Resources.resources
+C:\Users\extpiki\source\repos\ModelFirstEntityFramework\ModelFirstEntityFramework\obj\Debug\ModelFirstEntityFramework.csproj.GenerateResource.cache
+C:\Users\extpiki\source\repos\ModelFirstEntityFramework\ModelFirstEntityFramework\obj\Debug\ModelFirstEntityFramework.csproj.CoreCompileInputs.cache
+C:\Users\extpiki\source\repos\ModelFirstEntityFramework\ModelFirstEntityFramework\obj\Debug\ModelFirstEntityFramework.csproj.CopyComplete
+C:\Users\extpiki\source\repos\ModelFirstEntityFramework\ModelFirstEntityFramework\obj\Debug\ModelFirstEntityFramework.exe
+C:\Users\extpiki\source\repos\ModelFirstEntityFramework\ModelFirstEntityFramework\obj\Debug\ModelFirstEntityFramework.pdb

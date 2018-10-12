@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5cf7ffc87d004decbe607277f05afdae" Name="Diagram1" ZoomLevel="43" >
+        <EntityTypeShape EntityType="JewelleryModel.Items" Width="2" PointX="8.25" PointY="1.5" />
+        <EntityTypeShape EntityType="JewelleryModel.Products" Width="2" PointX="5.5" PointY="1.5" />
+        <EntityTypeShape EntityType="JewelleryModel.LegalUnits" Width="2.125" PointX="5.5" PointY="4.75" />
+        <AssociationConnector Association="JewelleryModel.ProductsItems" ></AssociationConnector>
+        <AssociationConnector Association="JewelleryModel.LegalUnitsProducts" />
+        <EntityTypeShape EntityType="JewelleryModel.ItemLocalisation" Width="2.5" PointX="11" PointY="2.125" />
+        <AssociationConnector Association="JewelleryModel.ItemsItemLocalisation" />
+        <EntityTypeShape EntityType="JewelleryModel.ItemPrices" Width="2.25" PointX="8.375" PointY="5.5" />
+        <AssociationConnector Association="JewelleryModel.ItemsItemPrices" />
+        <EntityTypeShape EntityType="JewelleryModel.PriceCodes" Width="2.125" PointX="11.375" PointY="5.75" />
+        <EntityTypeShape EntityType="JewelleryModel.Currencies" Width="2.25" PointX="8.375" PointY="8.625" />
+        <AssociationConnector Association="JewelleryModel.PriceCodesItemPrices" />
+        <AssociationConnector Association="JewelleryModel.ItemPricesCurrencies" />
+        <EntityTypeShape EntityType="JewelleryModel.Merchants" Width="2.125" PointX="13.75" PointY="3" />
+        <EntityTypeShape EntityType="JewelleryModel.Stores" Width="1.875" PointX="14" PointY="6.75" />
+        <AssociationConnector Association="JewelleryModel.MerchantsStores" />
+        <EntityTypeShape EntityType="JewelleryModel.StoreItems" Width="2.25" PointX="16.625" PointY="6.5" />
+        <AssociationConnector Association="JewelleryModel.PriceCodesStores" />
+        <EntityTypeShape EntityType="JewelleryModel.ItemDescriptions" Width="2.125" PointX="16.625" PointY="1.5" />
+        <AssociationConnector Association="JewelleryModel.ItemDescriptionsItems" />
+        <AssociationConnector Association="JewelleryModel.LegalUnitsStores" ManuallyRouted="true" >
+          <ConnectorPoint PointX="6.5625" PointY="7.1148893229166656" />
+          <ConnectorPoint PointX="6.5625" PointY="10.948995768229166" />
+          <ConnectorPoint PointX="9.4166666666666661" PointY="10.948995768229166" />
+          <ConnectorPoint PointX="9.5833333333333339" PointY="10.948995768229166" />
+          <ConnectorPoint PointX="10.947916666666666" PointY="10.948995768229166" />
+          <ConnectorPoint PointX="11.114583333333334" PointY="10.948995768229166" />
+          <ConnectorPoint PointX="13.760416666666666" PointY="10.948995768229166" />
+          <ConnectorPoint PointX="13.927083333333334" PointY="10.948995768229166" />
+          <ConnectorPoint PointX="14" PointY="10.948995768229166" />
+        </AssociationConnector>
+        <AssociationConnector Association="JewelleryModel.ItemDescriptionsItemLocalisation" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="JewelleryModel.StoresStoreItems" />
+        <AssociationConnector Association="JewelleryModel.StoreItemsItems" />
+        <EntityTypeShape EntityType="JewelleryModel.Orders" Width="1.75" PointX="10.75" PointY="12" />
+        <EntityTypeShape EntityType="JewelleryModel.OrderLines" Width="2.5" PointX="16.75" PointY="12.125" />
+        <EntityTypeShape EntityType="JewelleryModel.OrderPaymentLines" Width="2.25" PointX="20.125" PointY="12.125" />
+        <AssociationConnector Association="JewelleryModel.CurrencyID" />
+        <EntityTypeShape EntityType="JewelleryModel.Terminals" Width="1.875" PointX="14" PointY="12" />
+        <AssociationConnector Association="JewelleryModel.StoresTerminals" />
+        <AssociationConnector Association="JewelleryModel.TerminalsOrders" />
+        <AssociationConnector Association="JewelleryModel.MerchantsOrders" />
+        <AssociationConnector Association="JewelleryModel.StoresOrders" />
+        <AssociationConnector Association="JewelleryModel.OrdersOrderLines" />
+        <AssociationConnector Association="JewelleryModel.ItemsOrderLines" />
+        <AssociationConnector Association="JewelleryModel.CurrenciesOrderLines" />
+        <AssociationConnector Association="JewelleryModel.OrderLinesOrderPaymentLines" />
+        <EntityTypeShape EntityType="JewelleryModel.Payments" Width="1.5" PointX="23" PointY="12.125" />
+        <AssociationConnector Association="JewelleryModel.PaymentsOrderPaymentLines" />
+        <AssociationConnector Association="JewelleryModel.CurrenciesOrderPaymentLines" />
+        <AssociationConnector Association="JewelleryModel.OrdersPayments" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
